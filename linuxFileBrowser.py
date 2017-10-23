@@ -35,6 +35,9 @@ while(True):
             dirname = dirname + '/' + i[0]
         print("\n" + dirname)
         for a in os.listdir(dirname):
+            # append slash for directory
+            if os.path.isdir(a):
+                a += '/'
             print(a)
     except:
         print("Invalid entry")
