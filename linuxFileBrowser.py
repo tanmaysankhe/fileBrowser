@@ -29,7 +29,8 @@ while(True):
                 file.close()
             except IOError:
                 print("File couldn't be opened")
-
+        elif(i[0] == 'rename'):
+            os.rename(i[1], i[2])
 
         else:
             dirname = dirname + '/' + i[0]
