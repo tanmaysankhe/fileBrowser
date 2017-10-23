@@ -6,33 +6,38 @@ dirname1 = dirname
 for a in os.listdir(dirname1):
     print(a)
 
+def back(args):
+    global dirname
+    li = list(dirname.split('/'))
+    del li[-1]
+    dirname = '/'.join(li)
+    if(dirname[-1] == ':'):
+        dirname = dirname + '/'
+    print(dirname)
+
+def openFile(args):
+    global dirname
+    f = "%s/%s" % (dirname, ' '.join(args[1:]))
+    # open f
+
+def cd(args):
+    global dirname
+    dirname += '/' + ' '.join(args)
+
+commands = {
+    "back": back,
+    "open": openFile,
+}
+
 while(True):
     try:
         i = list(map(str,input().strip().split()))
         if(i[0] == 'exit'):
             break
 
-        elif(i[0] == 'back'):
-            li = list(dirname.split('/'))
-            del li[-1]
-            dirname = '/'.join(li)
-            if(dirname[-1] == ':'):
-                dirname = dirname + '/'
-            print(dirname)
-        elif(i[0] == 'open'):
-            print(i[1])
-            i[1] =  dirname + "/" + i[1]
-          #  os.startfile(i[1])
-            try:
-                file = open("i[1]", "r")
-                exec(file)
-                file.close()
-            except IOError:
-                print("File couldn't be opened")
+        print(i)
+        commands.get(i[0], cd)(i)
 
-
-        else:
-            dirname = dirname + '/' + i[0]
         print("\n" + dirname)
         for a in os.listdir(dirname):
             print(a)
