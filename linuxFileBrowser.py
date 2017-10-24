@@ -1,12 +1,23 @@
 import os
+import shutil
+
+def copy(path):
+    print(path)
+    app=1
+    dest=path+str(app)
+    while os.path.isfile(dest): #while the propsed new file exists, loop
+        app+=1
+        dest=path+str(app)
+    print(dest)
+    shutil.copy2(path, dest)
+    print("File copied as", dest)
 dirname = "/"
-#print(os.listdir(dirname))
+
 print(dirname)
 dirname1 = dirname
 for a in os.listdir(dirname1):
     print(a)
 
-def copy(path):
 
 while(True):
     try:
@@ -31,8 +42,10 @@ while(True):
                 file.close()
             except IOError:
                 print("File couldn't be opened")
-        elif(i[0].lower() == '')
-
+        elif(i[0].lower() == "copy"):
+            i[1] =  dirname + "/" + i[1]
+            copy(i[1][1:])
+            continue
         else:
             dirname = dirname + '/' + i[0]
         print("\n" + dirname)
