@@ -1,4 +1,5 @@
 import os
+import subprocess
 dirname = "/"
 #print(os.listdir(dirname))
 print(dirname)
@@ -22,7 +23,7 @@ while(True):
         elif(i[0] == 'open'):
             print(i[1])
             i[1] =  dirname + "/" + i[1]
-          #  os.startfile(i[1])
+            subprocess.Popen(['xdg-open', i[1]])
             try:
                 file = open("i[1]", "r")
                 exec(file)
