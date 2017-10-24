@@ -17,6 +17,9 @@ It is a simple file browser script in python3 for Windows (needs C: drive)
 4. For going to previous directory
 	1. Write **back**
 	2. Hit enter
+5. To rename a specific file
+	1. Write **rename oldfilename newfilename**
+	2. Hit enter
 
 # Issues
 

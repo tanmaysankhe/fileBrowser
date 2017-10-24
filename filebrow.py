@@ -22,10 +22,15 @@ while(True):
         print(i[1])
         i[1] =  dirname + "\\" + i[1]
         os.startfile(i[1])
+    elif(i[0] == 'rename'):
+        os.rename(i[1], i[2])
     else:
         dirname = dirname + '\\' + i[0]
     print("\n" + dirname)
     for a in os.listdir(dirname):
+        # append slash for directory
+        if os.path.isdir(a):
+            a += '\'
         print(a)
 
 #print(dirname)

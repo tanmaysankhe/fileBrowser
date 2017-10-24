@@ -30,12 +30,16 @@ while(True):
                 file.close()
             except IOError:
                 print("File couldn't be opened")
-
+        elif(i[0] == 'rename'):
+            os.rename(i[1], i[2])
 
         else:
             dirname = dirname + '/' + i[0]
         print("\n" + dirname)
         for a in os.listdir(dirname):
+            # append slash for directory
+            if os.path.isdir(a):
+                a += '/'
             print(a)
     except:
         print("Invalid entry")
