@@ -45,7 +45,6 @@ while(True):
         elif(i[0].lower() == "copy"):
             i[1] =  dirname + "/" + i[1]
             copy(i[1][1:])
-            continue
         else:
             dirname = dirname + '/' + i[0]
         print("\n" + dirname)
