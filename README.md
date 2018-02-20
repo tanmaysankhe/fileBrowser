@@ -19,7 +19,4 @@ It is a simple file browser script in python3 for Windows (needs C: drive)
 	2. Hit enter
 
 # Issues
-
-1. Add more features
-2. Add script to open(launch) file in linux
-3. Any changes you feel like
+1. GUI
