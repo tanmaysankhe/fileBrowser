@@ -1,4 +1,5 @@
 import os
+from shutil import copyfile
 dirname = "c:"
 #print(os.listdir(dirname))
 print(dirname)
@@ -22,6 +23,12 @@ while(True):
         print(i[1])
         i[1] =  dirname + "\\" + i[1]
         os.startfile(i[1])
+    elif(i[0] == 'copy'):
+        try:
+            copyfile(i[1], i[2])
+            print(i[1], "->", i[2])
+        except IOError as e:
+            print(e.args[1]) 
     else:
         dirname = dirname + '\\' + i[0]
     print("\n" + dirname)
