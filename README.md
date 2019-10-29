@@ -20,3 +20,4 @@ It is a simple file browser script in python3 for Windows (needs C: drive)
 
 # Issues
 1. GUI
+2. Instruction
